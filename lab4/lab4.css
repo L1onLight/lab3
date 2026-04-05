@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0b0c10;
+    overflow: hidden;
+}
+
+/* Головний контейнер системи */
+.space {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Відображення орбіти */
+.orbit-line {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+/* Стилізація Землі */
+.earth {
+    width: 100px;
+    height: 100px;
+    background-color: #4b80ca;
+    /* Синій колір океанів */
+    border-radius: 50%;
+    /* Додаємо тінь для ефекту об'єму (сфери) та легке світіння атмосфери */
+    box-shadow: inset -15px -15px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(75, 128, 202, 0.4);
+    position: absolute;
+}
+
+/* Контейнер Місяця, який бере на себе функцію обертання */
+.moon-container {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    /* Запуск анімації: назва, тривалість, рівномірна швидкість, нескінченний повтор */
+    animation: orbit 5s linear infinite;
+}
+
+/* Стилізація Місяця */
+.moon {
+    width: 30px;
+    height: 30px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    /* Тінь для об'єму */
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* Зміщуємо Місяць точно на лінію орбіти */
+    transform: translate(-50%, -50%);
+}
+
+/* Ключові кадри для обертання */
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

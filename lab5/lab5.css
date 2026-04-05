@@ -1,0 +1,164 @@
+/* =========================================================
+   style4.css  –  Lab 4 custom overrides on top of Bootstrap
+   (original style.css is NOT modified)
+   ========================================================= */
+
+:root {
+    --bg: #f2f3f5;
+    --paper: #ffffff;
+    --ink: #161616;
+    --muted: #5e6372;
+    --line: #e4e8ef;
+    --base-accent: #22b760;
+    --accent-soft: #9bc0ff;
+    --bar-gradient: linear-gradient(90deg, #3f90ff, var(--base-accent));
+    --shadow: 0 16px 40px rgba(22, 22, 22, 0.08);
+}
+
+/* ---------- Base ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 90% 10%, #dde9ff 0, transparent 36%),
+        radial-gradient(circle at 8% 88%, #e8f0ff 0, transparent 42%),
+        var(--bg);
+}
+
+/* ---------- Header / Navbar ---------- */
+.site-header {
+    border-bottom: 1px solid rgba(228, 232, 239, 0.75);
+    backdrop-filter: blur(10px);
+    background: rgba(242, 243, 245, 0.86) !important;
+    z-index: 20;
+}
+
+.logo {
+    font-family: "Unbounded", sans-serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--base-accent);
+}
+
+.nav-link {
+    border-radius: 999px;
+    padding: 0.4rem 0.65rem !important;
+    color: var(--ink) !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    background-color: #dbe8ff;
+    color: var(--base-accent) !important;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    background: var(--paper);
+    border: 1px solid var(--line) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--shadow);
+}
+
+/* ---------- Profile photo ---------- */
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #edf3ff;
+}
+
+/* ---------- Skill bars ---------- */
+.skill-bar {
+    height: 14px;
+    border-radius: 999px;
+    background: #edf0f6;
+    overflow: hidden;
+}
+
+.skill-bar .progress-bar {
+    background: var(--bar-gradient);
+    border-radius: 999px;
+}
+
+/* ---------- Portfolio work items ---------- */
+.work-item {
+    background: #fafbff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(22, 22, 22, 0.10);
+}
+
+.work-img {
+    height: 150px;
+    object-fit: cover;
+}
+
+/* ---------- Contact form ---------- */
+.form-control {
+    border-color: #d9dfeb;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    border-color: var(--accent-soft);
+    box-shadow: 0 0 0 3px rgba(38, 117, 255, 0.14);
+}
+
+.btn-send {
+    background: var(--base-accent);
+    color: #fff;
+    border: 0;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    font-family: inherit;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.btn-send:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    color: #fff;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    color: var(--muted);
+}
+
+/* ---------- Reveal animation (scroll-triggered) ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.10s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.20s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.30s;
+}
